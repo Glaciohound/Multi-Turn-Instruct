@@ -2,7 +2,7 @@
 Official repository for paper "Can Language Models Follow Multiple Turns of Entangled Instructions?"
 
 
-[![Paper](https://img.shields.io/badge/Paper-Arxiv-blue)](https://github.com/Glaciohound/Multi-Turn-Instruct/assets/paper.pdf)
+[![Paper](https://img.shields.io/badge/Paper-Arxiv-blue)](https://arxiv.org/pdf/2503.13222)
 [![Website](https://img.shields.io/badge/Website-Official-green)](https://glaciohound.github.io/Multi-Turn-Instruct)
 
 
@@ -94,3 +94,21 @@ python evaluation/score_breakdown.py \
 
 As long as you see the output files
 `$TRIAL/$MODEL/predictions.json`, `$TRIAL/$MODEL/scores.json`, and `$TRIAL/summary.json`, the evaluation is successfully executed.
+
+
+## Citation
+
+
+
+```bibtex
+@article{han2025multiturninstruct,
+  author    = {Chi Han},
+  title     = {Can Language Models Follow Multiple Turns of Entangled Instructions?},
+  journal   = {arXiv preprint},
+  volume    = {arXiv:2503.13222},
+  year      = {2025},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  url       = {https://arxiv.org/abs/2503.13222}
+}
+```
