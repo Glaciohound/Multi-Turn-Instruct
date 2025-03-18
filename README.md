@@ -22,8 +22,8 @@ This repository contains the dataset, evaluation code, and benchmarks for the **
 Despite significant achievements in improving the instruction-following capabilities of large language models (LLMs), the ability to process multiple potentially entangled or conflicting instructions remains a considerable challenge.  Real-world scenarios often require consistency across multiple instructions over time, such as secret privacy, personal preferences, and prioritization, which demand sophisticated abilities to integrate multiple turns and carefully balance competing objectives when instructions intersect or conflict.
 This work presents a systematic investigation of LLMs’ capabilities in handling multiple turns of instructions, covering three levels of difficulty: (1) retrieving information from instructions, (2) tracking and reasoning across turns, and (3) resolving conflicts among instructions. We construct Multi-Turn-Instruct with∼1.1K high-quality multi-turn conversations through the human-in-the-loop approach and result in nine capability categories, including statics and dynamics, reasoning, and multitasking.
 
-![Composition](assets/data_composition.pdf)
-![Scenarios](assets/scenarios.pdf)
+![Composition](assets/data_composition.jpg)
+![Scenarios](assets/scenarios.jpg)
 
 ---
 
@@ -49,7 +49,7 @@ Our finding reveals an intriguing trade-off between different capabilities. Whil
 
 Shown below is a histogram comparing model performances in the paper:
 
-![Results](assets/model_scores.pdf)
+![Results](assets/model_scores.jpg)
 
 
 ## Interesting Correlation Among Tasks and Models
