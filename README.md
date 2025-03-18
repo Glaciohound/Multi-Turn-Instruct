@@ -1,9 +1,10 @@
-# Multi-Turn-Instruct
-Official repository for paper "Can Language Models Follow Multiple Turns of Entangled Instructions?"
+## Official repository for paper "Can Language Models Follow Multiple Turns of Entangled Instructions?"
 
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv-blue)](https://arxiv.org/pdf/2503.13222)
 [![Website](https://img.shields.io/badge/Website-Official-green)](https://glaciohound.github.io/Multi-Turn-Instruct)
+[![Codes](https://img.shields.io/badge/Codes-available-green)](https://github.com/Glaciohound/Multi-Turn-Instruct)
+[![Huggingface](https://img.shields.io/badge/Dataset-Huggingface-orange)](https://huggingface.co/datasets/Glaciohound/Multi-Turn-Instruct)
 
 
 ## 📌 Overview
@@ -98,6 +99,8 @@ As long as you see the output files
 
 ## Citation
 
+
+If you find our work useful, please feel free to cite our work:
 
 
 ```bibtex
