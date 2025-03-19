@@ -53,7 +53,7 @@ Shown below is a histogram comparing model performances in the paper:
 ![Results](assets/model_scores.jpg)
 
 
-## Interesting Correlation Among Tasks and Models
+## An Interesting Correlation Among Tasks and Models
 
 Our analysis reveals an interesting trade-off between the strengths and weaknesses of current LLMs.
 Despite the expectation that improved intelligence will positively reflect in performance in most tasks, tasks positively and negatively correlate in their performance on LLMs. The tasks falling within the "contradiction resolution" category, namely Privacy Protection, Personalization, and Prioritization, are less correlated with the other tasks.
