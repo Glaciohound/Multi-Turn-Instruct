@@ -30,6 +30,8 @@ def parse_args():
     parser.add_argument('--max-tokens-per-turn', type=int, default=1024)
     # output
     parser.add_argument('--output-dir', type=str, required=True)
+    parser.add_argument('--silent', action='store_true')
+    parser.add_argument('--patient', action='store_true')
     args = parser.parse_args()
     return args
 
@@ -138,7 +140,7 @@ def get_predictions(datum, max_context_size):
     return datum_predictions
 
 
-def score_datum_predictions(datum_predictions):
+def score_datum_predictions(datum_predictions, silent):
     for turn in datum_predictions:
         response = turn["response"]
         evaluation_metric = turn["evaluation_metric"]
@@ -146,7 +148,8 @@ def score_datum_predictions(datum_predictions):
         score = metric_function_dict[evaluation_metric](
             response, evaluation_reference)
         turn["score"] = score
-        print(score, evaluation_reference, response)
+        if not silent:
+            print(score, evaluation_reference, response)
 
 
 def evaluate(model, dataset, predictions_file):
@@ -155,18 +158,32 @@ def evaluate(model, dataset, predictions_file):
         print("Evaluating:", task)
         pbar = tqdm(list(task_dataset.items()), total=len(task_dataset))
         for datum_id, datum in pbar:
+            # eval or skip
             if datum_id not in predictions[task].keys():
                 datum_predictions = get_predictions(
                     datum, args.max_context_size)
-                score_datum_predictions(datum_predictions)
+                score_datum_predictions(datum_predictions, args.silent)
                 predictions[task][datum_id] = datum_predictions
-                print(log_and_summarize(
-                    predictions, predictions_file, scores_file, summary_file))
             else:
-                print("Skipping", task, datum_id)
-                score_datum_predictions(predictions[task][datum_id])
-                print(log_and_summarize(
-                    predictions, predictions_file, scores_file, summary_file))
+                if not args.patient:
+                    print("Skipping", task, datum_id)
+                score_datum_predictions(predictions[task][datum_id],
+                                        args.silent)
+
+            # summarize and log
+            if not args.patient:
+                eval_log = log_and_summarize(
+                    predictions, predictions_file,
+                    scores_file, summary_file)
+                if not args.silent:
+                    print(eval_log)
+
+    # final summary
+    print("Final summary:")
+    final_summary = log_and_summarize(
+        predictions, predictions_file,
+        scores_file, summary_file)
+    print(final_summary)
 
 
 if __name__ == "__main__":
