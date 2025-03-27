@@ -20,17 +20,6 @@ def not_matching_any(response, references):
 def matching_any_exact(response, references):
     if references is None:
         return None
-    # v0
-    # answer = re.search(r"Answer: (.+)", response)
-    # if answer is None:
-    #     return 0
-    # answer = answer.groups()[0].strip()
-    # v1
-    # answer = re.findall(r"Answer: (.+?)", response)
-    # if len(answer) == 0:
-    #     return 0
-    # answer = answer[-1].strip()
-    # v2
     match = re.search(r"Answer:\s*(.+)", response)
     if not match:
         return 0
