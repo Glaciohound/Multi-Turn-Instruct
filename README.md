@@ -13,7 +13,7 @@ This repository contains the dataset, evaluation code, and benchmarks for the **
 
 > **Can Language Models Follow Multiple Turns of Entangled Instructions?**  
 > **Chi Han**, Xin Liu, Haodong Wang, Shiyang Li, Jingfeng Yang, Haoming Jiang, Zhengyang Wang, Qingyu Yin, Liang Qiu, Changlong Yu, Yifan Gao, Zheng Li, Bing Yin, Jingbo Shang, Heng Ji  
-> University of Illinois Urbana-Champaign, Amazon, University of California, San Diego 
+> University of Illinois Urbana-Champaign, Amazon, University of California, San Diego  
 > 📧 Email: chihan3@illinois.edu  
 
 ---
